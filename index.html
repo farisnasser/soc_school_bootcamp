@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate CTF Attack</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AUS is Under Attack!</h1>
+        <p class="intro">Hackers are attacking different departments. Can you defend the company?</p>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0/5 Flags Found</p>
+
+        <div class="corporate-map">
+            <div class="department" onclick="toggleChallenge('dep1')">
+                <p class="dept-title">CSE Department</p>
+                <div class="challenge" id="dep1">
+                    <a href="https://picoctf.org/challenge1" target="_blank">Attack 1: PicoCTF Challenge</a>
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button onclick="checkFlag('dep1')">Submit</button>
+                </div>
+            </div>
+
+            <div class="department" onclick="toggleChallenge('dep2')">
+                <p class="dept-title">ELE Department</p>
+                <div class="challenge" id="dep2">
+                    <a href="https://picoctf.org/challenge2" target="_blank">Attack 2: PicoCTF Challenge</a>
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button onclick="checkFlag('dep2')">Submit</button>
+                </div>
+            </div>
+
+            <div class="department" onclick="toggleChallenge('dep3')">
+                <p class="dept-title">MCE Department</p>
+                <div class="challenge" id="dep3">
+                    <a href="https://picoctf.org/challenge3" target="_blank">Attack 3: PicoCTF Challenge</a>
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button onclick="checkFlag('dep3')">Submit</button>
+                </div>
+            </div>
+
+            <div class="department" onclick="toggleChallenge('dep4')">
+                <p class="dept-title">CVE Department</p>
+                <div class="challenge" id="dep4">
+                    <a href="https://picoctf.org/challenge4" target="_blank">Attack 4: PicoCTF Challenge</a>
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button onclick="checkFlag('dep4')">Submit</button>
+                </div>
+            </div>
+
+            <div class="department" onclick="toggleChallenge('dep5')">
+                <p class="dept-title">Security Room</p>
+                <div class="challenge" id="dep5">
+                    <a href="https://picoctf.org/challenge5" target="_blank">Final Attack: PicoCTF Challenge</a>
+                    <input type="text" placeholder="Enter flag..." class="flag-input">
+                    <button onclick="checkFlag('dep5')">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

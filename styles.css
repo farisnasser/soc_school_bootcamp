@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    background: url('CYBERWAR.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 0px 20px #00ff00;
+}
+
+
+h1 {
+    color: #ff0000;
+    text-shadow: 0px 0px 5px #ff0000;
+}
+
+.intro {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Corporate Map Layout */
+.corporate-map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px; /* More space between boxes */
+    margin-top: 20px;
+}
+.department {
+    width: 260px;
+    height: 190px;
+    background-color: rgba(255, 0, 0, 0.1); /* Red before submission */
+    border: 3px solid #ff0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px #ff0000;
+    padding: 60px;
+    position: relative;
+}
+
+.department:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Green color when flag is correct */
+.department.correct {
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 3px solid #00ff00;
+    box-shadow: 0px 0px 15px #00ff00;
+}
+
+.department.correct:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+/* Title inside department box */
+.dept-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0px 0px 5px #00ff00;
+}
+
+/* Hidden Challenge Box */
+.challenge {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    box-shadow: 0px 0px 10px #00ff00;
+}
+
+
+
+
+
+/* Make sure links are readable */
+.challenge a {
+    color: #ff0000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.challenge a:hover {
+    text-decoration: underline;
+}
+
+/* Input Box */
+.flag-input {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0px 0px 5px #00ff00;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    height: 25px;
+    margin: 15px 0;
+    box-shadow: 0px 0px 10px #00ff00;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 1%;  /* Ensure it is always visible */
+    background-color: #00ff00;
+    transition: width 0.5s ease-in-out;
+}
+
+#progress-text {
+    font-size: 1.2em;
+    color: #00ff00;
+    margin-top: 5px;
+}
+
+
+.challenge button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: black;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #00ff00;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px #00ff00;
+}
+
+.challenge button:hover {
+    background-color: #00ff00;
+    color: black;
+    text-shadow: none;
+    box-shadow: 0px 0px 15px #00ff00;
+    transform: scale(1.1);
+}
+
+.challenge button:active {
+    background-color: #008000;
+    border-color: #008000;
+    box-shadow: 0px 0px 20px #008000;
+    transform: scale(0.95);
+}
+
+.challenge button:disabled {
+    background-color: #444;
+    border-color: #555;
+    color: #888;
+    cursor: not-allowed;
+    text-shadow: none;
+    box-shadow: none;
+}
