@@ -1,17 +1,7 @@
-// Correct flags (Replace these with actual flags from picoCTF)
-const correctFlags = {
-    dep1: "picoCTF{flag1}",
-    dep2: "picoCTF{flag2}",
-    dep3: "picoCTF{flag3}",
-    dep4: "picoCTF{flag4}",
-    dep5: "picoCTF{flag5}"
-};
-
 // Track submitted flags
 let submittedFlags = 0;
-const totalFlags = Object.keys(correctFlags).length;
+const totalFlags = 5; // Number of challenges
 
-// Function to toggle challenge visibility
 function toggleChallenge(id) {
     let challengeBox = document.getElementById(id);
     if (challengeBox.style.display === "none" || challengeBox.style.display === "") {
@@ -19,12 +9,11 @@ function toggleChallenge(id) {
     }
 }
 
-// Function to check the flag
 function checkFlag(department) {
     let inputField = document.querySelector(`#${department} .flag-input`);
     let userFlag = inputField.value.trim();
     let resultMessage = document.querySelector(`#${department} .result-message`);
-    let departmentBox = document.querySelector(`[onclick="toggleChallenge('${department}')"]`); // Get department box
+    let departmentBox = document.querySelector(`[onclick="toggleChallenge('${department}')"]`); 
 
     if (!resultMessage) {
         resultMessage = document.createElement("p");
@@ -32,14 +21,14 @@ function checkFlag(department) {
         document.getElementById(department).appendChild(resultMessage);
     }
 
-    if (userFlag === correctFlags[department]) {
+    if (userFlag.length > 15 && userFlag.includes("picoCTF{") && userFlag.endsWith("}")) {
         if (!inputField.disabled) {
-            submittedFlags++;  // Increase progress only if it's a new correct submission
+            submittedFlags++; 
         }
 
-        resultMessage.innerHTML = "✅ Correct Flag!";
+        resultMessage.innerHTML = "✅ Flag Submitted!";
         resultMessage.style.color = "#00ff00";
-        inputField.disabled = true; // Prevent multiple submissions
+        inputField.disabled = true; 
 
         // Update department box to green
         departmentBox.classList.add("correct");
@@ -47,7 +36,7 @@ function checkFlag(department) {
         // Update progress
         updateProgress();
     } else {
-        resultMessage.innerHTML = "❌ Incorrect! Try Again.";
+        resultMessage.innerHTML = "❌ Invalid Flag!";
         resultMessage.style.color = "#ff0000";
     }
 }
@@ -63,6 +52,6 @@ function updateProgress() {
     if (submittedFlags === totalFlags) {
         progressText.innerText = "🎉 All Departments Secured!";
     } else {
-        progressText.innerText = `Progress: ${submittedFlags}/${totalFlags} Flags Found`;
+        progressText.innerText = `Progress: ${submittedFlags}/${totalFlags} Flags Submitted`;
     }
 }
